@@ -6,12 +6,13 @@
   "scripts": {
     "sass": "node-sass --watch --output-style expanded -o css scss",
     "js": "npx babel ./scripts/init.es6 --watch --out-file ./scripts/init.js --presets=@babel/env",
-    "live": "live-server",
+    "live": "live-server --open=./html",
     "build": "npm-run-all --parallel sass js live",
     "watch:css": "onchange './scss/*.scss' -- npm run sass",
     "watch:js": "onchange './scripts/*.es6' -- npm run js",
     "watch:all": "npm-run-all --parallel watch:css watch:js",
-    "serve": "npm-run-all --parallel build watch:all"
+    "serve": "npm-run-all --parallel build watch:all",
+    "generate": "npm-run-all --parallel sass js"
   },
   "author": "Josee Wouters",
   "license": "ISC",
